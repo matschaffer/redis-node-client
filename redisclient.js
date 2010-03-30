@@ -4,7 +4,7 @@
 // License: MIT
 
 var sys = require("sys"), 
-    tcp = require("tcp");
+    net = require("net");
 
 var crlf = "\r\n", 
     crlf_len = 2;
@@ -52,7 +52,7 @@ sys.inherits(Client, process.EventEmitter);
 
 Client.prototype.connect = function (callback) {
   if (!this.conn) {
-    this.conn = new process.tcp.Connection();
+    this.conn = new net.Stream();
   }
   if (this.conn.readyState === "open" && typeof(callback) === 'function') {
     callback();
