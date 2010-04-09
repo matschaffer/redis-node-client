@@ -1,22 +1,15 @@
-# TO DO LIST
+## Soon
 
-**Patches are always welcome!**
+- Support MULTI/EXEC/DISCARD. This is a little tricky given that its
+  referred to as a "transaction" (but it's really a macro).  The API
+  must clearly define what the hell is going on in error cases, etc.
 
-## Future / Redis 2.0
+## Later
 
-- Hashes: HGET, HSET, HDEL, HINCRBY, HEXISTS, HLEN, HMSET, HMGET, HKEYS, HVALS, HGETALL
-- Strings: APPEND, SUBSTR, LEN, PEEK, POKE, SETBIT, GETBIT
-- Blocking operations: BLPOP, BRPOPLPUSH
-- Sorted sets: ZRANK, ZCOUNT, ZREVRANK, ZREMBYRANK, ZUNION, ZINTER
-- Protocol stuff:
-    - MULTI, EXEC
-    - Multi-bulk client protocol support
-    - LPUSH, RPUSH return length of list now, not OK
-- [Channels](http://code.google.com/p/redis/issues/detail?id=209)
+- Create a free list for request buffers instead of allocating one for each request?
+- Provide wrapper around the pretty-raw sort method?
 
-## Other
+## Maybe
 
-- Consistent hashing ala redis-rb and txRedisAPI
-- JS object-redis mapper using just redis hashes 
-    - note: no nested objects in redis' hashes (so no nested lists, sets, hashes)
-
+- Add support for consistent hashing ala redis-rb and txRedisAPI
+- Add a higher-level interface similar to Ohm (Ruby)
